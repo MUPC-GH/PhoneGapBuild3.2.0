@@ -1328,6 +1328,107 @@ input.mm-fileuploader-picker {
   outline: none;
 }
 
+/* - User grades table (most of it extracted from MM1)
+-------------------------------------------------------------------------- */
+.mm-grades-table {
+  border-collapse: collapse;
+  line-height: 20px;
+  width: 100%;
+  border-top: 1px solid $item-light-border;
+  font-size: 16px;
+  color: $item-stable-text;
+  tr {
+    border-bottom: 1px solid $item-light-border;
+  }
+  th,
+  td {
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    vertical-align: top;
+    white-space: normal;
+  }
+  thead th {
+    padding-left: 10px;
+    vertical-align: bottom;
+    font-weight: bold;
+  }
+  tbody th {
+    font-weight: normal;
+  }
+  .item {
+    display: table-cell;
+  }
+  th {
+    &.b1b {
+      padding-left: 20px;
+    }
+    &.item {
+      padding-left: 40px;
+    }
+    &.baggt {
+      padding-left: 40px;
+    }
+    img {
+      margin-left: -20px;
+      float: left;
+    }
+  }
+  .b1l {
+    width: 20px;
+    min-width: 20px;
+  }
+  .b1t,
+  .baggt {
+    font-weight: bold;
+  }
+  .itemcenter {
+    @extend .item;
+    padding: 10px;
+    white-space: nowrap;
+  }
+  .feedbacktext {
+    padding-left: 10px;
+    .no-overflow {
+      overflow: auto;
+    }
+  }
+  .dimmed_text,
+  .hidden,
+  .hidden a {
+    color: #aaa;
+  }
+  .oddd1,
+  .oddd3,
+  .evend3,
+  .levelodd {
+    background-color: $item-divider-bg;
+  }
+  .oddd2,
+  .evend2,
+  .oddd4,
+  .evend4 {
+    background-color: $item-stable-bg;
+  }
+  .leveleven {
+    background-color: $item-light-bg;
+  }
+  .column-leader {
+    border-left: 1px solid $item-light-border;
+    border-top: 1px solid $item-light-border;
+    border-bottom: 1px solid $item-light-border;
+    &.level1 {
+      border-left: 0;
+    }
+  }
+  .column-itemname {
+    border-right: 1px solid $item-light-border;
+    border-top: 1px solid $item-light-border;
+    border-bottom: 1px solid $item-light-border;
+  }
+}
+
 
 .mm-mm_login_sites {
   .item-thumbnail-left .item-content {
@@ -1481,107 +1582,6 @@ li.mm-question-answer-incorrect,
   color: $mm-question-warning-color;
 }
 
-/* - User grades table (most of it extracted from MM1)
--------------------------------------------------------------------------- */
-.mm-grades-table {
-  border-collapse: collapse;
-  line-height: 20px;
-  width: 100%;
-  border-top: 1px solid $item-light-border;
-  font-size: 16px;
-  color: $item-stable-text;
-  tr {
-    border-bottom: 1px solid $item-light-border;
-  }
-  th,
-  td {
-    text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    vertical-align: top;
-    white-space: normal;
-  }
-  thead th {
-    padding-left: 10px;
-    vertical-align: bottom;
-    font-weight: bold;
-  }
-  tbody th {
-    font-weight: normal;
-  }
-  .item {
-    display: table-cell;
-  }
-  th {
-    &.b1b {
-      padding-left: 20px;
-    }
-    &.item {
-      padding-left: 40px;
-    }
-    &.baggt {
-      padding-left: 40px;
-    }
-    img {
-      margin-left: -20px;
-      float: left;
-    }
-  }
-  .b1l {
-    width: 20px;
-    min-width: 20px;
-  }
-  .b1t,
-  .baggt {
-    font-weight: bold;
-  }
-  .itemcenter {
-    @extend .item;
-    padding: 10px;
-    white-space: nowrap;
-  }
-  .feedbacktext {
-    padding-left: 10px;
-    .no-overflow {
-      overflow: auto;
-    }
-  }
-  .dimmed_text,
-  .hidden,
-  .hidden a {
-    color: #aaa;
-  }
-  .oddd1,
-  .oddd3,
-  .evend3,
-  .levelodd {
-    background-color: $item-divider-bg;
-  }
-  .oddd2,
-  .evend2,
-  .oddd4,
-  .evend4 {
-    background-color: $item-stable-bg;
-  }
-  .leveleven {
-    background-color: $item-light-bg;
-  }
-  .column-leader {
-    border-left: 1px solid $item-light-border;
-    border-top: 1px solid $item-light-border;
-    border-bottom: 1px solid $item-light-border;
-    &.level1 {
-      border-left: 0;
-    }
-  }
-  .column-itemname {
-    border-right: 1px solid $item-light-border;
-    border-top: 1px solid $item-light-border;
-    border-bottom: 1px solid $item-light-border;
-  }
-}
-
 #mm-settings-languagelabel {
   color: $base-color;
 }
@@ -1624,6 +1624,9 @@ $bar-side-menu-text-color: $bar-content-text !default;
     padding-bottom: 16px;
 }
 
+.mm-site_coursesgrades .item .badge {
+  right: 16px;
+}
 .mm-site_frontpage {
     .mma-frontpage-item-container .item-media {
         min-height: 55px;
@@ -1646,9 +1649,6 @@ $bar-side-menu-text-color: $bar-content-text !default;
             height: 22px;
         }
     }
-}
-.mm-site_coursesgrades .item .badge {
-  right: 16px;
 }
 $mma-messages-date-badge: "stable" !default;
 
@@ -1741,6 +1741,42 @@ $mma-messages-date-badge: "stable" !default;
   text-align: center;
 }
 
+$mma-chat-notice-badge: "stable" !default;
+
+// The notice displayed in the list.
+.mma-chat-notice {
+
+  text-align: center;
+  margin-top: 10px;
+
+  span {
+    @extend .badge;
+    @extend .badge-#{$mma-chat-notice-badge};
+    white-space: normal;
+  }
+}
+
+.mma-chat-input-inset {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.mma-chat-footer-note {
+    color: $button-light-text;
+    font-size: $font-size-base;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.mma-chat-send-form {
+  width: 100%;
+}
+
+.mma-chat-reconnect-button, .button.mma-chat-reconnect-button {
+  margin: 0;
+}
 
 $mma-mod-assign-warning-color:      #c00 !default;
 
@@ -2010,42 +2046,6 @@ p.mma-mod-assign-warning {
   }
 }
 
-$mma-chat-notice-badge: "stable" !default;
-
-// The notice displayed in the list.
-.mma-chat-notice {
-
-  text-align: center;
-  margin-top: 10px;
-
-  span {
-    @extend .badge;
-    @extend .badge-#{$mma-chat-notice-badge};
-    white-space: normal;
-  }
-}
-
-.mma-chat-input-inset {
-    padding-top: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-}
-
-.mma-chat-footer-note {
-    color: $button-light-text;
-    font-size: $font-size-base;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-}
-
-.mma-chat-send-form {
-  width: 100%;
-}
-
-.mma-chat-reconnect-button, .button.mma-chat-reconnect-button {
-  margin: 0;
-}
 .mm-site_mod_choice {
   .chart {
     max-width: 400px;
@@ -2528,6 +2528,26 @@ $mma-qbehaviour-deferredcbm-confident-color:    #c00 !default;
     display: none;
   }
 }
+// Style gapselect content a bit. All these styles are copied from Moodle.
+.mma-qtype-gapselect-container {
+  p {
+    margin: 0 0 .5em;
+  }
+
+  select {
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 4px 6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+}
+
+
 // Style ddwtos content a bit. Almost all these styles are copied from Moodle.
 .mma-qtype-ddwtos-container {
   .qtext {
@@ -2636,25 +2656,13 @@ $mma-qbehaviour-deferredcbm-confident-color:    #c00 !default;
 
 
 
-// Style gapselect content a bit. All these styles are copied from Moodle.
-.mma-qtype-gapselect-container {
-  p {
-    margin: 0 0 .5em;
-  }
-
+// Style match content a bit.
+.mma-qtype-match-container {
   select {
-    height: 30px;
-    line-height: 30px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    padding: 4px 6px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    padding: 0 36px 0 0;
+    max-width: 100%;
   }
 }
-
 
 // Style multianswer content a bit. All these styles are copied from Moodle.
 .mma-qtype-multianswer-container {
@@ -2700,11 +2708,3 @@ $mma-qbehaviour-deferredcbm-confident-color:    #c00 !default;
   }
 }
 
-
-// Style match content a bit.
-.mma-qtype-match-container {
-  select {
-    padding: 0 36px 0 0;
-    max-width: 100%;
-  }
-}
